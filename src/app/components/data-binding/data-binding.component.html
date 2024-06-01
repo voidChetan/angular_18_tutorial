@@ -1,0 +1,49 @@
+<div class="row">
+    <div class="col-4">
+        On Way - from .ts to .html
+    </div>
+    <div class="col-4">
+
+    </div>
+    <div class="col-4">
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-6">
+        <div class="row">
+            <div class="col-4 bg-success">
+                interpolation
+                <h4>{{courseName}}</h4>
+                <div> {{inputType}}</div>
+                <input type="text" value="{{courseName}}" placeholder="ENter text" />
+                <input type="{{inputType}}" />
+            </div>
+            <div class="col-4">
+                Property Binding
+                <div  [class]="myClassName">Danger</div>
+                <input type="text" [value]="courseName"/>
+                <input [type]="inputType" /> 
+            </div>
+            <div class="col-4">
+                <button class="btn btn-success" (click)="showAlert('Welcome Angualr 18')">Show Welcome</button>
+                <span (click)="showAlert('thi si from span')">Click me</span>
+                <button class="btn btn-success" (click)="changeCourseName()">Change Course</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-6">
+        <input type="text" [(ngModel)]="courseName"/> - {{courseName}}
+        <input type="checkbox" [(ngModel)]="isIndian"/>
+        <select [(ngModel)]="stateName">
+            <option value="">Select</option>
+            <option value="Maharashtra">Maharashtra</option>
+            <option value="Goa">Goa</option>
+            <option value="Punjab">Punjab</option>
+        </select>
+    </div>
+    <div class="col-6">
+        <h2> {{firstName()}}</h2>
+    </div>
+</div>
