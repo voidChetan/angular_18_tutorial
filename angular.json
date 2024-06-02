@@ -62,8 +62,7 @@
               "buildTarget": "angular_18_tutorial:build:production"
             },
             "development": {
-              "buildTarget": "angular_18_tutorial:build:development",
-              "port": 4203
+              "buildTarget": "angular_18_tutorial:build:development" 
             }
           },
           "defaultConfiguration": "development"
