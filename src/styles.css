@@ -6,3 +6,9 @@
 .width-50 {
     width: 50%;
 }
+.form-control {
+    border: 1px solid !important;
+}
+.form-select {
+    border: 1px solid !important;
+}

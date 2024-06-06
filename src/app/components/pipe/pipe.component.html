@@ -1,0 +1,66 @@
+<div class="mt-2 p-2 bg-secondary text-white rounded">
+    <h4>Pipe In Angular</h4>
+    <h3>Default Pipe & Custom Pipe  </h3> 
+</div>
+
+<div class="row">
+    <div class="col-3">
+        Original Value -  {{firstName}}
+        <br/>
+        after Pipe - {{firstName | uppercase }}
+    </div>
+    <div class="col-3">
+        Original Value -  {{firstName}}
+        <br/>
+        after Pipe -{{firstName | lowercase }}
+    </div>
+    <div class="col-3">
+        Original Value - {{firstName}}
+        <br/>
+        after Pipe -{{firstName | titlecase }}
+    </div>
+    <div class="col-3">
+        Original Value - 
+        <br/>
+        after Pipe -
+    </div>
+</div>
+<div class="row pt-3">
+    <div class="col-3">
+        Original Value - {{currentDate}}
+        <br/>
+        after Pipe -{{currentDate |date}}
+    </div>
+    <div class="col-3">
+        Original Value - {{currentDate |date:'dd-MM-yyyy'}}
+        <br/>
+        after Pipe --{{currentDate |date:'dd-MM-yy'}}
+    </div>
+    <div class="col-3">
+        Original Value - {{currentDate |date:'dd-MMM-yy'}}
+        <br/>
+        after Pipe -{{currentDate |date:'dd/MMM/yy'}}
+    </div>
+    <div class="col-3">
+        Original Value - 
+        <br/>
+        after Pipe -
+    </div>
+</div>
+<div class="row">
+    <div class="col-3">
+        Original Value - {{student}}
+        <br/>
+        after Pipe - {{student|json}}
+    </div>
+    <div class="col-3">
+        Original Value - {{currentTime}}
+        <br/>
+        after Pipe - {{currentTime | async | date:'hh:mm:ss'}}
+    </div>
+    <div class="col-3">
+        Original Value - {{student.state}}
+        <br/>
+        after Pipe - {{student.state |na}}
+    </div>
+</div>
