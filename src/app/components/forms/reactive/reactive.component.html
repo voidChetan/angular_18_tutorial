@@ -1,1 +1,67 @@
-<p>reactive works!</p>
+<div class="mt-2 p-2 bg-secondary text-white rounded">
+    <h1>Reactive Form</h1>
+    <p>Create Form & Validation</p>
+</div>
+<div class="row">
+    <div class="col-8">
+        <form class="row g-3" [formGroup]="studentForm">
+            <div class="col-md-4">
+                <label class="form-label">First name</label>
+                <input type="text" formControlName="firstName" class="form-control">
+                <div class="text-danger">
+                    @if (studentForm.controls['firstName'].touched && studentForm.controls['firstName'].errors?.['required']) {
+                        <span> This is Required</span>
+                    } @else if(studentForm.controls['firstName'].touched && studentForm.controls['firstName'].errors?.['minlength']) {
+                        <span> Min char 4 required</span>
+                    } 
+                </div>
+            </div>
+            <div class="col-md-4">
+                <label class="form-label">Last name</label>
+                <input type="text" formControlName="lastName" class="form-control">
+            </div>
+            <div class="col-md-4">
+                <label class="form-label">Username</label>
+                <div class="input-group">
+                    <span class="input-group-text"><span>&#64;</span> </span>
+                    <input formControlName="userName" type="text" class="form-control">
+                </div>
+                @if (studentForm.controls['userName'].touched && studentForm.controls['userName'].errors?.['email']) {
+                    <span class="text-danger"> Email Not Proper</span>
+                }
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">City</label>
+                <input type="text" formControlName="city" class="form-control">
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">State</label>
+                <select class="form-select" formControlName="state">
+                    <option selected disabled value="">Choose...</option>
+                    <option>Mahashtra</option>
+                    <option>Goa</option>
+                    <option>Punjab</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">Zip</label>
+                <input type="text" formControlName="zipCode" class="form-control">
+            </div>
+            <div class="col-12">
+                <div class="form-check">
+                    <input class="form-check-input" formControlName="isAcceptTerms" type="checkbox">
+                    <label class="form-check-label" for="invalidCheck">
+                        Agree to terms and conditions
+                    </label>
+                </div>
+            </div>
+            <div class="col-12">
+                <button class="btn btn-secondary" type="button" >Reset form</button>
+                <button class="btn btn-primary mx-2" type="button" [disabled]="studentForm.invalid" (click)="onSave()">Submit </button>
+            </div>
+        </form>
+    </div>
+    <div class="col-4">
+         {{formValue | json}}
+    </div>
+</div>

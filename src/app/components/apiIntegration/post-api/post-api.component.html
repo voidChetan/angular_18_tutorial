@@ -1,0 +1,81 @@
+<app-alert  [alertType]="'Warning'" [message]="'Welcome To Post Page'"></app-alert>
+ <br>
+ <app-alert  [alertType]="'Error'" [message]="'Some error Occoured'"></app-alert>
+
+ <app-my-button (onBtnClick)="getData($event)" [btnClass]="'btn btn-success'" [btnText]="'Save Record'"></app-my-button>
+
+<div class="row pt-2">
+    <div class="col-8">
+        <div class="card">
+            <div class="card-header bg-secondary text-white">
+                Department List
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-12">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Sr No</th>
+                                    <th>Name</th>
+                                    <th>Logo</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @for (item of deptList; track $index) {
+                                <tr>
+                                    <td>{{$index+1}} </td>
+                                    <td>{{item.departmentName}}</td>
+                                    <td>{{item.departmentLogo}}</td>
+                                    <td> 
+                                        <button class="btn btn-primary" (click)="onEdit(item)">Edit</button>
+                                        <app-my-button (onBtnClick)="onDelete(item.departmentId)" [btnClass]="'btn btn-danger'" [btnText]="'Delete'"></app-my-button>
+
+                                        <!-- <button class="btn btn-danger" (click)="onDelete(item.departmentId)">Delete</button> -->
+                                    </td>
+                                </tr>
+                                }
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-4">
+        <div class="card">
+            <div class="card-header bg-secondary text-white">
+                New Department
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-12">
+                        <label for="">Department Name</label>
+                        <input type="text" [(ngModel)]="deptObj.departmentName" class="form-control"
+                            placeholder="Enter Name">
+                    </div>
+                    <div class="col-12">
+                        <label for="">Department Logo</label>
+                        <input type="text" [(ngModel)]="deptObj.departmentLogo" class="form-control"
+                            placeholder="Enter Logo Url">
+                    </div>
+                </div>
+                <div class="row pt-3">
+                    <div class="col-6 text-center">
+                        <button class="btn btn-secondary">Reset</button>
+                    </div>
+                    <div class="col-6 text-center"> 
+                        @if(deptObj.departmentId == 0) {
+                            <button class="btn btn-success" (click)="onSave()">Save </button>
+                        }@else {
+                            <button class="btn btn-warning" (click)="onUpdate()">Update </button>
+                        } 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
