@@ -22,6 +22,7 @@ export class LoginComponent {
 
   onLogin(){
     debugger;
+    this.router.navigateByUrl('add-emp')
     this.http.post("https://projectapi.gerasim.in/api/Users/Login", this.userObj).subscribe((res:any)=>{
       if(res.result) {
         alert("login Success");
@@ -29,6 +30,7 @@ export class LoginComponent {
         this.router.navigateByUrl('add-emp')
       } else {
         alert(res.message)
+        this.router.navigateByUrl('add-emp')
       }
     })
     // if(this.userObj.userName == "admin" && this.userObj.password =="1234") {
