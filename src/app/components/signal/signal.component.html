@@ -1,0 +1,34 @@
+<div class="mt-2 p-2 bg-secondary text-white rounded">
+    <h1>signal</h1>
+    <p>create signal, update, display</p>
+</div>
+
+<div class="row">
+    <div class="col-3">
+        {{firstName()}} - {{courseName}}
+    </div>
+    <div class="col-3">
+        {{rollNo()}}
+    </div>
+    <div class="col-3">
+        fullName- {{fullName()}}
+    </div>
+    <div class="col-3">
+        {{cityList()}} - {{studentObj().name}}-{{studentObj().city}}
+    </div>
+</div>
+<div class="row">
+    <div class="col-3">
+       <button (click)="changeName()" class="btn btn-success">Change Name</button>
+    </div>
+    <div class="col-3">
+        <button (click)="changeName()" class="btn btn-success">Change First</button>
+        <button (click)="changeLastName()" class="btn btn-success">Change Last</button>
+    </div>
+    <div class="col-3">
+        <button (click)="addCity()" class="btn btn-success">Add City</button>
+    </div>
+    <div class="col-3">
+        <button (click)="changeStudetnCity()" class="btn btn-success">Change City</button>
+    </div>
+</div>

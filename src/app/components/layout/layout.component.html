@@ -1,0 +1,73 @@
+ 
+
+
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="javascript:void(0)">Logo</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mynavbar">
+        <ul class="navbar-nav me-auto"> 
+          <li class="nav-item" >
+            <a class="nav-link" routerLink="data-binding">Data-Binding</a>
+          </li>
+          <li class="nav-item" >
+            <a class="nav-link" routerLink="signal">Signal</a>
+          </li>
+          <li class="nav-item" >
+            <a class="nav-link" routerLink="Life-cycle">Life Cycle Event</a>
+          </li>
+          <li class="nav-item dropdown"  >
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Directive</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" routerLink="structural-dir">Structiral Directive</a></li>
+              <li><a class="dropdown-item" routerLink="attributedirective">Attribute Directive</a></li> 
+              <li><a class="dropdown-item" routerLink="ng-template">ng-template</a></li> 
+              <li><a class="dropdown-item" routerLink="ng-container">ng-container</a></li> 
+            </ul>
+          </li>
+          <li class="nav-item dropdown"  >
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Control Flow</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" routerLink="if-else"> <span>&#64;</span>if</a></li>
+              <li><a class="dropdown-item" routerLink="for"> <span>&#64;</span>for, switch</a></li> 
+            </ul>
+          </li> 
+          <li class="nav-item" >
+            <a class="nav-link" routerLink="pipe"> Pipe</a>
+          </li>
+          <li class="nav-item dropdown"  >
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Forms</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" routerLink="template-form">Template Form</a></li>
+              <li><a class="dropdown-item" routerLink="reactive-form">Reactive Form</a></li> 
+            </ul>
+          </li>
+          <li class="nav-item dropdown"  >
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">API -HttpClient</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" routerLink="get-api">Get API</a></li>
+              <li><a class="dropdown-item" routerLink="post-api">Post API</a></li> 
+            </ul>
+          </li>
+          <li class="nav-item dropdown"  >
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Decorator</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" routerLink="viewChild">ViewChild</a></li>
+              
+            </ul>
+          </li>
+        </ul>
+        <form class="d-flex">
+            <span class="text-white">{{loggedUserData?.emailId}}</span>
+           <button class="btn btn-primary" type="button" (click)="logoff()">LogOff</button>  
+        </form>
+      </div>
+    </div>
+  </nav> 
+
+ 
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>

@@ -14,67 +14,98 @@ import { PostAPIComponent } from './components/apiIntegration/post-api/post-api.
 import { LifecycleEventComponent } from './components/lifecycle-event/lifecycle-event.component';
 import { NgtemplateComponent } from './components/directive/ngtemplate/ngtemplate.component';
 import { NgcontainerComponent } from './components/directive/ngcontainer/ngcontainer.component';
+import { ViewchildComponent } from './components/decorators/viewchild/viewchild.component';
+import { LoginComponent } from './components/login/login.component';
+import { LayoutComponent } from './components/layout/layout.component';
+import { authGuard } from './service/auth.guard';
+import { SignalComponent } from './components/signal/signal.component';
  
 export const routes: Routes = [
+    //defualt route
     {
-        path:'add-emp',
-        component: AddEmployeeComponent
+        path:'',
+        redirectTo:'login',
+        pathMatch:'full'
     },
     {
-        path:'data-binding',
-        component:DataBindingComponent
-    },
+        path:'login',
+        component:LoginComponent
+    }, 
     {
-        path:'emp-list',
-        component: EmployeeListComponent
-    },
-    {
-        path:'structural-dir',
-        component: StructuralDirComponent
-    },
-    {
-        path: 'attributedirective',
-        component: AttributeDirectiveComponent
-    },
-    {
-        path: 'if-else',
-        component: IfelseComponent
-    },
-    {
-        path: 'for',
-        component: ForComponent
-    },
-    {
-        path: 'pipe',
-        component: PipeComponent
-    },
-    {
-        path: 'template-form',
-        component: TemplateComponent
-    },
-    {
-        path: 'reactive-form',
-        component: ReactiveComponent
-    },
-    {
-        path: 'get-api',
-        component: GetAPIComponent
-    },
-    {
-        path: 'post-api',
-        component: PostAPIComponent
-    },
-    {
-        path: 'Life-cycle',
-        component: LifecycleEventComponent
-    },
-    {
-        path: 'ng-template',
-        component: NgtemplateComponent
-    },
-    {
-        path: 'ng-container',
-        component: NgcontainerComponent
+        path:'',
+        component:LayoutComponent,
+        children:[
+            {
+                path:'add-emp',
+                component: AddEmployeeComponent
+            },
+            {
+                path:'signal',
+                component: SignalComponent
+            },
+            {
+                path:'data-binding',
+                component:DataBindingComponent,
+                canActivate: [authGuard]
+            },
+            {
+                path:'emp-list',
+                component: EmployeeListComponent
+            },
+            {
+                path:'structural-dir',
+                component: StructuralDirComponent
+            },
+            {
+                path: 'attributedirective',
+                component: AttributeDirectiveComponent
+            },
+            {
+                path: 'if-else',
+                component: IfelseComponent
+            },
+            {
+                path: 'for',
+                component: ForComponent
+            },
+            {
+                path: 'pipe',
+                component: PipeComponent
+            },
+            {
+                path: 'template-form',
+                component: TemplateComponent
+            },
+            {
+                path: 'reactive-form',
+                component: ReactiveComponent
+            },
+            {
+                path: 'get-api',
+                component: GetAPIComponent
+            },
+            {
+                path: 'post-api',
+                component: PostAPIComponent
+            },
+            {
+                path: 'Life-cycle',
+                component: LifecycleEventComponent
+            },
+            {
+                path: 'ng-template',
+                component: NgtemplateComponent
+            },
+            {
+                path: 'ng-container',
+                component: NgcontainerComponent
+            },
+            {
+                path: 'viewChild',
+                component: ViewchildComponent
+            }
+        
+        ]
     }
-
+   
 ];

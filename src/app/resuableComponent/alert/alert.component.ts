@@ -11,6 +11,7 @@ import { Component, Input, OnChanges, SimpleChanges,ElementRef, afterNextRender,
 export class AlertComponent implements OnChanges {
   @Input() message: string = '';
   @Input() alertType: string = '';
+  alertMode: string = "DEmo Demo";
 
 
   ngOnChanges(changes: SimpleChanges): void {

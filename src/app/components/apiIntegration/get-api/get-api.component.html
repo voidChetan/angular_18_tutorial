@@ -11,5 +11,12 @@
             }
         </select>
     </div>
+    <div class="col-3">
+        <select class="form-select">
+            @for (item of customerList; track $index) {
+                <option> {{item.name}}</option>
+            }
+        </select>
+    </div>
     <button (click)="changeMSg()">Change Msg</button>
 </div>

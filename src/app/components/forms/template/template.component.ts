@@ -1,6 +1,7 @@
 import { JsonPipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Constant } from '../../../constant/Constant';
 
 @Component({
   selector: 'app-template',
@@ -21,6 +22,7 @@ export class TemplateComponent {
     isAcceptTerms: false
   }
 
+  validationMessage: any =  Constant.VALIDATION_MESSAGE;
   formValue: any;
 
   onSubmit() {

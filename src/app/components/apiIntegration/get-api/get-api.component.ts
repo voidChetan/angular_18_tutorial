@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { AlertComponent } from '../../../resuableComponent/alert/alert.component';
+import { Customer } from '../../../model/class/Customer';
+import { IUser } from '../../../model/interface/IUser';
 @Component({
   selector: 'app-get-api',
   standalone: true,
@@ -10,8 +12,8 @@ import { AlertComponent } from '../../../resuableComponent/alert/alert.component
 })
 export class GetAPIComponent {
 
-  userList: any [] = [];
-  customerList: any []= [];
+  userList: IUser [] = [];
+  customerList: Customer [] = [];
   alertMsg : string = ''
 
   constructor(private http: HttpClient) {
@@ -32,7 +34,7 @@ export class GetAPIComponent {
 
   getAllCustomer() {
     debugger;
-    this.http.get("https://projectapi.gerasim.in/api/RealEstate/GetAllCustomers").subscribe((res:any)=>{
+    this.http.get("https://projectapi.gerasim.in/api/PropertyBookingController/GetAllCustomer").subscribe((res:any)=>{
       debugger;
       this.customerList =  res.data;
     }, error=>{

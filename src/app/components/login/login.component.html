@@ -1,0 +1,19 @@
+<div class="parent">
+    <div class="container-login">
+        <div class="signin-form">
+            <h2>Sign In</h2>
+            <form>
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input [(ngModel)]="userObj.EmailId" type="text" id="username" name="EmailId" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input [(ngModel)]="userObj.Password"  type="password" id="password" name="Password" required>
+                </div>
+                <button type="button" (click)="onLogin()">Sign In</button>
+            </form>
+        </div>
+    </div>
+</div>
+
