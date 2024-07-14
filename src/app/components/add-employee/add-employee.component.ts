@@ -1,6 +1,7 @@
  
 import { HttpClient } from '@angular/common/http';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, inject, OnInit, signal } from '@angular/core';
+import { EmployeeService } from '../../service/employee.service';
 
 @Component({
   selector: 'app-add-employee',
@@ -12,7 +13,7 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, inject, OnInit, 
 })
 export class AddEmployeeComponent implements OnInit {
    
-  http = inject(HttpClient);
+  empService = inject(EmployeeService);
   // userList: any[]=[];
   name: string = 'Html';
 
@@ -23,7 +24,7 @@ export class AddEmployeeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.http.get("https://jsonplaceholder.typicode.com/users").subscribe((res:any)=>{
+    this.empService.getUsers().subscribe((res:any)=>{
       this.userList.set(res);
       this.name = "JAVA"; 
     })
