@@ -25,6 +25,7 @@
               <li><a class="dropdown-item" routerLink="attributedirective">Attribute Directive</a></li> 
               <li><a class="dropdown-item" routerLink="ng-template">ng-template</a></li> 
               <li><a class="dropdown-item" routerLink="ng-container">ng-container</a></li> 
+              <li><a class="dropdown-item" routerLink="add-emp">add-emp</a></li> 
             </ul>
           </li>
           <li class="nav-item dropdown"  >
@@ -60,7 +61,12 @@
           </li>
         </ul>
         <form class="d-flex">
-            <span class="text-white">{{loggedUserData?.emailId}}</span>
+          <select  [(ngModel)]="selectedRole" name="selectedRole" (ngModelChange)="onRoleChnage($event)">
+            <option value="">Select Role</option>
+            <option value="user">User Role</option>
+            <option value="guest">Guest Role</option>
+          </select>
+           <span class="text-white">{{loggedUserData?.emailId}}</span>
            <button class="btn btn-primary" type="button" (click)="logoff()">LogOff</button>  
         </form>
       </div>

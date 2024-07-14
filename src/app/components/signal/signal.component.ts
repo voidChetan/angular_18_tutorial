@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, computed, signal } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, computed, signal } from '@angular/core';
 
 @Component({
   selector: 'app-signal',
@@ -26,12 +26,14 @@ export class SignalComponent {
   })
 
 
-  constructor() {
+  constructor(private cd: ChangeDetectorRef) {
     const fNae =  this.firstName();
     setTimeout(() => {
       // this.firstName.set("Dot Net");
-      this.courseName = "HTML"
+      this.courseName = "HTML";
+      //this.cd.detectChanges()
     }, 5000);
+   
   }
   changeStudetnCity() {
     this.studentObj.set({...this.studentObj(),city:'Mumbai'})

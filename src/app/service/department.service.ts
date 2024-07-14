@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Constant } from '../constant/Constant';
+import { BehaviorSubject, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -8,8 +9,10 @@ import { Constant } from '../constant/Constant';
 
 export class DepartmentService {
 
+  public onRoleChange$ : Subject<string> = new Subject<string>;
   
-
+  public role$ : BehaviorSubject<string> = new BehaviorSubject<string>("");
+  
   constructor(private http: HttpClient) { }
 
   getAllDept() {
