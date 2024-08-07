@@ -11,8 +11,14 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 export class AppComponent {
   title = 'angular_18_tutorial';
 
-  @HostListener('onScroll')
+  @HostListener('window:scroll')
   onScroll() {
-
+    console.log("Scrolling")
   }
+  @HostListener('contextmenu')
+  orRightClick(event: any) {
+   // event.preventDefault();
+  }
+
+
 }

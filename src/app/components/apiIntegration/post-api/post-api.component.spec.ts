@@ -20,4 +20,6 @@ describe('PostAPIComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  //write test case for whole 
 });
